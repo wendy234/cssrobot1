@@ -1,52 +1,111 @@
 <!DOCTYPE html>
 
 <head>
+<link href='https://fonts.googleapis.com/css?family=Poller+One' rel='stylesheet' type='text/css'>
 <style>
-div {
- height: 150px;
- width: 300px;
- margin: 0 auto;
+
+.robot {
+  position: relative;
+  left: 200px;
 }
 
-.beep {
+.beep{
   width: 5px;
   height: 0px;
   border: 5px solid transparent;
   border-top: 10px solid #777;
   border-bottom: 80px solid #888;
+  left: 140px;
+  position: relative;
 }
+/*
+@keyframes blink {
+  50% {
+   background: radial-gradient(circle, red 15%, transparent 40%), #cc5; 
+  }
+}
+@-webkit-keyframes blink {
+ 50% {
+  background: -webkit-radial-gradient(circle, red 15%, transparent 40%), #cc5; 
+ }
+}
+@-moz-keyframes blink {
+  50% {
+    background: -moz-radial-gradient(circle, red 15%, transparent 40%), #cc5;
+  }
+}
+*/
 .brain {
+  animation: blink .5s infinite;
+  -webkit-animation: blink .5s infinite;
+  -moz-animation: blink .5s infinite;
   background: radial-gradient(circle, white 15%, transparent 40%), #cc5;
-  background: -moz-radial-gradient(circle, white 15%, transparent 40%), #cc5;
+  background: -moz-radial-gradient(circle, white 15%, transparent 40%), #cc5; 
   background: -webkit-radial-gradient(circle, white 15%, transparent 40%), #cc5;
-  background-size: 50% 100%;
+  background-size: 75px 150px;
+  position: relative;
+  left: 70px;
   height: 150px;
   width: 150px;
   border-radius: 60px 60px 10px 10px;
-  border-bottom: 40px double #666;
+  border-bottom: 40px solid #666;
+}
+.torso {
+  height: 0;
+  width: 140px;
+  border-top: 300px solid #bc6;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+ 
 }
 
-.torso {
- height: 0;
- width: 140px;
- border-top: 300px solid #bc6;
- border-left: 75px solid transparent;
- border-right: 75px solid transparent;
- border-radius: 20px 20px 100px 100px;
+.left {
+  font-family: 'Poller One', verdana, arial, sans-serif;
+  color: #666;
+  font-weight: bold;
+  font-size: 250px;
+  transform: rotate(200deg);
+  -webkit-transform: rotate(200deg);
+  -moz-transform: rotate(200deg);
+  position: relative;
+  left: -190px;
+  top: -320px;
+  z-index: -1;
 }
+
+.right {
+   font-family: 'Poller One', verdana, arial, sans-serif;
+ color: #666;
+ font-weight: bold;
+  font-size: 250px;
+ transform: scaLeY(-1) rotate(20deg);
+  -webkit-transform: scaLeY(-1) rotate(20deg);
+  -moz-transform: scaLeY(-1) rotate(20deg);
+  z-index: -1;
+  position: relative;
+  top: -620px;
+  left: 190px;
+}
+
 .foot {
   height: 40px;
   width: 40px;
   background: #ccc;
   border-radius: 40px;
   border: 15px solid #999;
+  top: -10px;
+  left: 110px;
+  position: relative;
+  z-index: -1;
 }
 </style>
 </head>
 
 <body>
+<div class="robot">
 <div class="beep"></div>
 <div class="brain"></div>
-<div class="torso"></div>
+<div class="torso"><div class="left">j</div><div class="right">j</div></div>
 <div class="foot"></div>
+</div>
 </body>
